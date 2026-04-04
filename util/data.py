@@ -1,6 +1,14 @@
 import pandas as pd
 import numpy as np
 import streamlit as st
+import os
+
+# Resolve data directory relative to this file — works on Streamlit Cloud
+_DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+def _p(filename: str) -> str:
+    """Return absolute path to a data file."""
+    return os.path.join(_DATA_DIR, filename)
 
 
 # ── PARSERS ───────────────────────────────────────────────────
@@ -60,63 +68,63 @@ def _parse_impexp(path: str, year_start: int = 1970, year_end: int = 2019) -> pd
 
 @st.cache_data
 def load_producao() -> pd.DataFrame:
-    return _parse_production("Produção_de_vinhos__sucos_e_derivados_1970-2019.csv", 2019)
+    return _parse_production(_p("Produção_de_vinhos__sucos_e_derivados_1970-2019.csv"), 2019)
 
 @st.cache_data
 def load_comercializacao() -> pd.DataFrame:
-    return _parse_production("Comercialização_de_vinhos_e_derivados_1970-2019.csv", 2019)
+    return _parse_production(_p("Comercialização_de_vinhos_e_derivados_1970-2019.csv"), 2019)
 
 @st.cache_data
 def load_uvas_americanas() -> pd.DataFrame:
-    return _parse_production("Uvas_americanas_e_híbridas_processadas_1970-2018.csv", 2018)
+    return _parse_production(_p("Uvas_americanas_e_híbridas_processadas_1970-2018.csv"), 2018)
 
 @st.cache_data
 def load_uvas_viniferas() -> pd.DataFrame:
-    return _parse_production("Uvas_viníferas_processadas_1970-2018.csv", 2018)
+    return _parse_production(_p("Uvas_viníferas_processadas_1970-2018.csv"), 2018)
 
 @st.cache_data
 def load_uvas_mesa() -> pd.DataFrame:
-    return _parse_production("Uvas_de_mesa_processadas_1970-2018.csv", 2018)
+    return _parse_production(_p("Uvas_de_mesa_processadas_1970-2018.csv"), 2018)
 
 @st.cache_data
 def load_uvas_sem_class() -> pd.DataFrame:
-    return _parse_production("Uvas_sem_classificação_processadas_1970-2018.csv", 2018)
+    return _parse_production(_p("Uvas_sem_classificação_processadas_1970-2018.csv"), 2018)
 
 @st.cache_data
 def load_exp_vinhos() -> pd.DataFrame:
-    return _parse_impexp("Exportação_de_vinhos_de_mesa_1970-2019.csv")
+    return _parse_impexp(_p("Exportação_de_vinhos_de_mesa_1970-2019.csv"))
 
 @st.cache_data
 def load_exp_espumantes() -> pd.DataFrame:
-    return _parse_impexp("Exportação_de_espumantes_1970-2019.csv")
+    return _parse_impexp(_p("Exportação_de_espumantes_1970-2019.csv"))
 
 @st.cache_data
 def load_exp_suco() -> pd.DataFrame:
-    return _parse_impexp("Exportação_de_suco_de_uva_1970-2019.csv")
+    return _parse_impexp(_p("Exportação_de_suco_de_uva_1970-2019.csv"))
 
 @st.cache_data
 def load_exp_uvas() -> pd.DataFrame:
-    return _parse_impexp("Exportação_de_uvas_frescas_1970-2019.csv")
+    return _parse_impexp(_p("Exportação_de_uvas_frescas_1970-2019.csv"))
 
 @st.cache_data
 def load_imp_vinhos() -> pd.DataFrame:
-    return _parse_impexp("Importação_de_vinhos_de_mesa_1970-2019.csv")
+    return _parse_impexp(_p("Importação_de_vinhos_de_mesa_1970-2019.csv"))
 
 @st.cache_data
 def load_imp_espumantes() -> pd.DataFrame:
-    return _parse_impexp("Importação_de_espumantes_1970-2019.csv")
+    return _parse_impexp(_p("Importação_de_espumantes_1970-2019.csv"))
 
 @st.cache_data
 def load_imp_suco() -> pd.DataFrame:
-    return _parse_impexp("Importação_de_suco_de_uva_1970-2019.csv")
+    return _parse_impexp(_p("Importação_de_suco_de_uva_1970-2019.csv"))
 
 @st.cache_data
 def load_imp_uvas() -> pd.DataFrame:
-    return _parse_impexp("Importação_de_uvas_frescas_1970-2019.csv")
+    return _parse_impexp(_p("Importação_de_uvas_frescas_1970-2019.csv"))
 
 @st.cache_data
 def load_imp_passas() -> pd.DataFrame:
-    return _parse_impexp("Importação_de_uvas_passas_1970-2019.csv")
+    return _parse_impexp(_p("Importação_de_uvas_passas_1970-2019.csv"))
 
 
 # ── HELPERS ───────────────────────────────────────────────────
