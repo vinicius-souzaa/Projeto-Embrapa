@@ -22,9 +22,9 @@ iv   = load_imp_vinhos()
 ev   = load_exp_vinhos()
 
 st.markdown(
-    f'<h1 style="font-family:Playfair Display,serif;font-size:1.9rem;font-weight:700;'
+    f'<h1 style="font-family:Playfair Display,serif;2.185rem;font-weight:700;'
     f'color:{C["cream"]};margin:0 0 0.2rem;">💡 Conclusões & Insights</h1>'
-    f'<div style="font-size:0.82rem;color:{C["muted"]};margin-bottom:1.1rem;">'
+    f'<div style="0.943rem;color:{C["muted"]};margin-bottom:1.1rem;">'
     f'50 anos de vitivinicultura brasileira — o que os dados revelam</div>',
     unsafe_allow_html=True
 )
@@ -86,10 +86,10 @@ for i, (color, icon, title, text) in enumerate(achados):
     <div style="background:{C['surface']};border:1px solid {C['border']};
                 border-radius:8px;padding:1.1rem 1.3rem;margin-bottom:0.7rem;
                 border-left:3px solid {color};">
-        <div style="font-size:1.1rem;margin-bottom:0.3rem;">{icon}</div>
-        <div style="font-family:Playfair Display,serif;font-size:0.95rem;
+        <div style="1.265rem;margin-bottom:0.3rem;">{icon}</div>
+        <div style="font-family:Playfair Display,serif;1.0925rem;
                     font-weight:600;color:{color};margin-bottom:0.4rem;">{title}</div>
-        <div style="font-size:0.8rem;color:{C['muted']};line-height:1.65;">{text}</div>
+        <div style="0.92rem;color:{C['muted']};line-height:1.65;">{text}</div>
     </div>
     """, unsafe_allow_html=True)
 
@@ -108,17 +108,17 @@ comparativo = [
 ]
 
 comp_cols = st.columns([3,2,2,1])
-comp_cols[0].markdown(f'<div style="font-size:0.62rem;color:{C["dim"]};text-transform:uppercase;letter-spacing:0.1em;padding:0.4rem 0;">Indicador</div>', unsafe_allow_html=True)
-comp_cols[1].markdown(f'<div style="font-size:0.62rem;color:{C["dim"]};text-transform:uppercase;letter-spacing:0.1em;padding:0.4rem 0;">Início</div>', unsafe_allow_html=True)
-comp_cols[2].markdown(f'<div style="font-size:0.62rem;color:{C["dim"]};text-transform:uppercase;letter-spacing:0.1em;padding:0.4rem 0;">2019</div>', unsafe_allow_html=True)
-comp_cols[3].markdown(f'<div style="font-size:0.62rem;color:{C["dim"]};text-transform:uppercase;letter-spacing:0.1em;padding:0.4rem 0;">Var.</div>', unsafe_allow_html=True)
+comp_cols[0].markdown(f'<div style="0.713rem;color:{C["dim"]};text-transform:uppercase;letter-spacing:0.1em;padding:0.4rem 0;">Indicador</div>', unsafe_allow_html=True)
+comp_cols[1].markdown(f'<div style="0.713rem;color:{C["dim"]};text-transform:uppercase;letter-spacing:0.1em;padding:0.4rem 0;">Início</div>', unsafe_allow_html=True)
+comp_cols[2].markdown(f'<div style="0.713rem;color:{C["dim"]};text-transform:uppercase;letter-spacing:0.1em;padding:0.4rem 0;">2019</div>', unsafe_allow_html=True)
+comp_cols[3].markdown(f'<div style="0.713rem;color:{C["dim"]};text-transform:uppercase;letter-spacing:0.1em;padding:0.4rem 0;">Var.</div>', unsafe_allow_html=True)
 
 for ind, ini, fim, var, color in comparativo:
     c0, c1, c2, c3 = st.columns([3,2,2,1])
-    c0.markdown(f'<div style="font-size:0.8rem;color:{C["cream"]};padding:0.35rem 0;">{ind}</div>', unsafe_allow_html=True)
-    c1.markdown(f'<div style="font-size:0.8rem;color:{C["muted"]};padding:0.35rem 0;">{ini}</div>', unsafe_allow_html=True)
-    c2.markdown(f'<div style="font-size:0.8rem;color:{C["cream"]};font-weight:600;padding:0.35rem 0;">{fim}</div>', unsafe_allow_html=True)
-    c3.markdown(f'<div style="font-size:0.8rem;color:{color};font-weight:700;padding:0.35rem 0;">{var}</div>', unsafe_allow_html=True)
+    c0.markdown(f'<div style="0.92rem;color:{C["cream"]};padding:0.35rem 0;">{ind}</div>', unsafe_allow_html=True)
+    c1.markdown(f'<div style="0.92rem;color:{C["muted"]};padding:0.35rem 0;">{ini}</div>', unsafe_allow_html=True)
+    c2.markdown(f'<div style="0.92rem;color:{C["cream"]};font-weight:600;padding:0.35rem 0;">{fim}</div>', unsafe_allow_html=True)
+    c3.markdown(f'<div style="0.92rem;color:{color};font-weight:700;padding:0.35rem 0;">{var}</div>', unsafe_allow_html=True)
     st.markdown(f'<div style="border-bottom:1px solid {C["border"]};"></div>', unsafe_allow_html=True)
 
 st.divider()
@@ -130,34 +130,34 @@ st.markdown(f"""
             padding:1.3rem 1.6rem;">
   <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:1.2rem;">
     <div>
-      <p style="color:{C['gold']};font-size:0.62rem;font-weight:600;letter-spacing:0.15em;
+      <p style="color:{C['gold']};0.713rem;font-weight:600;letter-spacing:0.15em;
                 text-transform:uppercase;margin-bottom:0.4rem;">FONTE</p>
-      <p style="color:{C['muted']};font-size:0.76rem;line-height:1.7;margin:0;">
+      <p style="color:{C['muted']};0.874rem;line-height:1.7;margin:0;">
         Embrapa Uva e Vinho<br/>Dados da Vitivinicultura<br/>Serra Gaúcha · RS<br/>Portal VITIBRASIL</p>
     </div>
     <div>
-      <p style="color:{C['rose']};font-size:0.62rem;font-weight:600;letter-spacing:0.15em;
+      <p style="color:{C['rose']};0.713rem;font-weight:600;letter-spacing:0.15em;
                 text-transform:uppercase;margin-bottom:0.4rem;">DATASETS</p>
-      <p style="color:{C['muted']};font-size:0.76rem;line-height:1.7;margin:0;">
+      <p style="color:{C['muted']};0.874rem;line-height:1.7;margin:0;">
         15 arquivos CSV<br/>Produção · Comercialização<br/>Processamento (4 tipos)<br/>
         Exportação (4 produtos)<br/>Importação (5 produtos)</p>
     </div>
     <div>
-      <p style="color:{C['green']};font-size:0.62rem;font-weight:600;letter-spacing:0.15em;
+      <p style="color:{C['green']};0.713rem;font-weight:600;letter-spacing:0.15em;
                 text-transform:uppercase;margin-bottom:0.4rem;">PERÍODO</p>
-      <p style="color:{C['muted']};font-size:0.76rem;line-height:1.7;margin:0;">
+      <p style="color:{C['muted']};0.874rem;line-height:1.7;margin:0;">
         1970–2019 (50 anos)<br/>Produção: litros<br/>Processamento: kg<br/>
         Exp./Imp.: kg e USD</p>
     </div>
     <div>
-      <p style="color:{C['purple']};font-size:0.62rem;font-weight:600;letter-spacing:0.15em;
+      <p style="color:{C['purple']};0.713rem;font-weight:600;letter-spacing:0.15em;
                 text-transform:uppercase;margin-bottom:0.4rem;">STACK</p>
-      <p style="color:{C['muted']};font-size:0.76rem;line-height:1.7;margin:0;">
+      <p style="color:{C['muted']};0.874rem;line-height:1.7;margin:0;">
         Python · Pandas<br/>Plotly · Streamlit<br/>Playfair Display UI<br/>Tema vinho bordô</p>
     </div>
   </div>
   <div style="margin-top:1rem;padding-top:0.9rem;border-top:1px solid {C['border']};">
-    <p style="color:{C['muted']};font-size:0.71rem;margin:0;">
+    <p style="color:{C['muted']};0.8165rem;margin:0;">
       <strong style="color:{C['cream']};">Vinicius Abreu Ernestino Souza</strong> ·
       Data Analytics · São Paulo, SP
     </p>

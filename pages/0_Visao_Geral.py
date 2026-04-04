@@ -19,9 +19,9 @@ vinif = load_uvas_viniferas()
 
 # ── PAGE TITLE ────────────────────────────────────────────────
 st.markdown(
-    f'<h1 style="font-family:Playfair Display,serif;font-size:2.1rem;'
+    f'<h1 style="font-family:Playfair Display,serif;2.415rem;'
     f'font-weight:700;color:{C["cream"]};margin:0 0 0.2rem;">🍇 Vitivinicultura Brasileira</h1>'
-    f'<div style="font-size:0.85rem;color:{C["muted"]};margin-bottom:1.2rem;">'
+    f'<div style="0.9775rem;color:{C["muted"]};margin-bottom:1.2rem;">'
     f'50 anos de dados · Embrapa Uva e Vinho · Serra Gaúcha, RS · 1970–2019</div>',
     unsafe_allow_html=True
 )
@@ -89,7 +89,7 @@ for ano, label, color, desc in EVENTS:
         fig.add_trace(go.Scatter(
             x=[ano], y=[y_val],
             mode="markers",
-            marker=dict(size=11, color=color, symbol="diamond",
+            marker=dict(size=13, color=color, symbol="diamond",
                         line=dict(color=C["bg"], width=1.5)),
             name=label,
             hovertemplate=f"<b>{ano}</b><br>{label}<br>{desc}<extra></extra>",
@@ -98,7 +98,7 @@ for ano, label, color, desc in EVENTS:
         fig.add_annotation(
             x=ano, y=y_val + (15 if y_val < 200 else -25),
             text=f"{ano}", showarrow=False,
-            font=dict(color=color, size=9),
+            font=dict(color=color, size=10),
         )
 
 # 2016 annotation
@@ -106,7 +106,7 @@ fig.add_annotation(
     x=2016, y=vm_total[2016]/1e6 - 20,
     text="🌨️ Geada 2016<br>−59%",
     showarrow=True, arrowhead=2, arrowcolor=C["red"],
-    font=dict(color=C["red"], size=10), bgcolor=C["surface"],
+    font=dict(color=C["red"], size=12), bgcolor=C["surface"],
     bordercolor=C["red"], borderwidth=1,
 )
 
@@ -224,12 +224,12 @@ for i in range(0, len(EVENTS), 3):
         col.markdown(f"""
         <div style="background:{C['surface']};border:1px solid {C['border']};
                     border-radius:8px;padding:0.85rem;border-top:2px solid {color};">
-            <div style="font-size:0.68rem;color:{color};font-weight:700;
+            <div style="0.782rem;color:{color};font-weight:700;
                         margin-bottom:0.2rem;">{ano}</div>
-            <div style="font-size:0.84rem;font-weight:600;color:{C['cream']};
+            <div style="0.966rem;font-weight:600;color:{C['cream']};
                         margin-bottom:0.25rem;">{label}</div>
-            <div style="font-size:0.74rem;color:{C['muted']};line-height:1.45;">{desc}</div>
-            <div style="font-size:0.72rem;color:{color};margin-top:0.35rem;
+            <div style="0.851rem;color:{C['muted']};line-height:1.45;">{desc}</div>
+            <div style="0.828rem;color:{color};margin-top:0.35rem;
                         font-weight:600;">Vinho mesa: {val_str}</div>
         </div>
         """, unsafe_allow_html=True)

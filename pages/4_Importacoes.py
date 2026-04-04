@@ -20,9 +20,9 @@ iu  = load_imp_uvas()
 ip  = load_imp_passas()
 
 st.markdown(
-    f'<h1 style="font-family:Playfair Display,serif;font-size:1.9rem;font-weight:700;'
+    f'<h1 style="font-family:Playfair Display,serif;2.185rem;font-weight:700;'
     f'color:{C["cream"]};margin:0 0 0.2rem;">🛬 Importações</h1>'
-    f'<div style="font-size:0.82rem;color:{C["muted"]};margin-bottom:1.1rem;">'
+    f'<div style="0.943rem;color:{C["muted"]};margin-bottom:1.1rem;">'
     f'Quem compete com o produto brasileiro · kg e USD · 1970–2019</div>',
     unsafe_allow_html=True
 )
@@ -88,7 +88,7 @@ with tab1:
         orientation="h",
         marker_color=[PAIS_COLORS.get(p, C["dim"]) for p in top_imp["pais"]],
         text=[f"{v/1e6:.1f}M kg" for v in top_imp["kg"]],
-        textposition="outside", textfont=dict(color=C["muted"], size=10),
+        textposition="outside", textfont=dict(color=C["muted"], size=12),
     ))
     ly = get_layout(height=320, xaxis_title="Kg (milhões) — 2019", margin=dict(l=16,r=80,t=20,b=16))
     ly["yaxis"] = dict(**get_layout()["yaxis"], categoryorder="total ascending")

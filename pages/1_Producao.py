@@ -16,9 +16,9 @@ prod = load_producao()
 com  = load_comercializacao()
 
 st.markdown(
-    f'<h1 style="font-family:Playfair Display,serif;font-size:1.9rem;font-weight:700;'
+    f'<h1 style="font-family:Playfair Display,serif;2.185rem;font-weight:700;'
     f'color:{C["cream"]};margin:0 0 0.2rem;">🍷 Produção & Comercialização</h1>'
-    f'<div style="font-size:0.82rem;color:{C["muted"]};margin-bottom:1.1rem;">'
+    f'<div style="0.943rem;color:{C["muted"]};margin-bottom:1.1rem;">'
     f'Vinhos, sucos e derivados · litros · 1970–2019</div>',
     unsafe_allow_html=True
 )
@@ -95,7 +95,7 @@ with tab1:
         fig3.add_trace(go.Scatter(
             x=sub.index, y=[v/1e6 for v in sub.values],
             mode="lines+markers", name=cat,
-            line=dict(color=color, width=2), marker=dict(size=4),
+            line=dict(color=color, width=2), marker=dict(size=5),
             hovertemplate=f"<b>%{{x}}</b><br>%{{y:.1f}} M L<extra></extra>",
         ))
     fig3.update_layout(**get_layout(height=280, yaxis_title="Litros (milhões)",
@@ -183,12 +183,12 @@ with tab3:
         dec_cols[i].markdown(f"""
         <div style="background:{C['surface']};border:1px solid {C['border']};
                     border-radius:8px;padding:0.9rem;border-top:2px solid {color};">
-            <div style="font-size:0.62rem;color:{C['muted']};text-transform:uppercase;
+            <div style="0.713rem;color:{C['muted']};text-transform:uppercase;
                         letter-spacing:0.1em;margin-bottom:0.3rem;">{dec_label}</div>
-            <div style="font-family:Playfair Display,serif;font-size:1.5rem;
+            <div style="font-family:Playfair Display,serif;1.725rem;
                         font-weight:700;color:{color};line-height:1;">{avg:.0f}M L</div>
-            <div style="font-size:0.7rem;color:{C['muted']};margin-top:0.4rem;">média/ano</div>
-            <div style="margin-top:0.5rem;font-size:0.71rem;">
+            <div style="0.805rem;color:{C['muted']};margin-top:0.4rem;">média/ano</div>
+            <div style="margin-top:0.5rem;0.8165rem;">
                 {data_row("Melhor", str(best), C["green"])}
                 {data_row("Pior", str(worst), C["red"])}
             </div>
@@ -217,7 +217,7 @@ with tab3:
     fig6.update_layout(**get_layout(height=320, barmode="group",
                                      yaxis_title="Litros (milhões) — total da década",
                                      legend=dict(orientation="h", y=-0.14, x=0.5, xanchor="center"),
-                                     xaxis=dict(**get_layout()["xaxis"], tickangle=-15, tickfont=dict(size=10))))
+                                     xaxis=dict(gridcolor=C["border"], linecolor=C["border"], zeroline=False, tickangle=-15, tickfont=dict(color=C["muted"], size=14), title_font=dict(color=C["muted"]))))
     st.plotly_chart(fig6, use_container_width=True)
 
     st.markdown(insight(

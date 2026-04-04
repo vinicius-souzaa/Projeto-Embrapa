@@ -18,9 +18,9 @@ mesa  = load_uvas_mesa()
 sc    = load_uvas_sem_class()
 
 st.markdown(
-    f'<h1 style="font-family:Playfair Display,serif;font-size:1.9rem;font-weight:700;'
+    f'<h1 style="font-family:Playfair Display,serif;2.185rem;font-weight:700;'
     f'color:{C["cream"]};margin:0 0 0.2rem;">🍇 Processamento de Uvas</h1>'
-    f'<div style="font-size:0.82rem;color:{C["muted"]};margin-bottom:1.1rem;">'
+    f'<div style="0.943rem;color:{C["muted"]};margin-bottom:1.1rem;">'
     f'Kilos processados por tipo de uva · 1970–2018</div>',
     unsafe_allow_html=True
 )
@@ -63,7 +63,7 @@ with tab1:
         marker_color=[C["purple"] if i == 0 else hex_to_rgba(C["purple"], 0.6)
                       for i in range(len(top_amer))],
         text=[f"{v/1e6:.0f}M" for v in top_amer.values],
-        textposition="outside", textfont=dict(color=C["muted"], size=10),
+        textposition="outside", textfont=dict(color=C["muted"], size=12),
         hovertemplate="%{y}<br>%{x:.0f} M kg total<extra></extra>",
     ))
     ly = get_layout(height=420, xaxis_title="Kilos (milhões) — total 1970–2018",
@@ -111,7 +111,7 @@ with tab2:
         marker_color=[C["gold"] if i == 0 else hex_to_rgba(C["gold"], 0.6)
                       for i in range(len(top_vinif))],
         text=[f"{v/1e6:.1f}M" for v in top_vinif.values],
-        textposition="outside", textfont=dict(color=C["muted"], size=10),
+        textposition="outside", textfont=dict(color=C["muted"], size=12),
     ))
     ly2 = get_layout(height=420, xaxis_title="Kilos (milhões) — total 1970–2018",
                      margin=dict(l=16, r=60, t=30, b=16))

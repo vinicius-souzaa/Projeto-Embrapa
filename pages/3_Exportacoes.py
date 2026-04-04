@@ -18,9 +18,9 @@ es = load_exp_suco()
 eu = load_exp_uvas()
 
 st.markdown(
-    f'<h1 style="font-family:Playfair Display,serif;font-size:1.9rem;font-weight:700;'
+    f'<h1 style="font-family:Playfair Display,serif;2.185rem;font-weight:700;'
     f'color:{C["cream"]};margin:0 0 0.2rem;">✈️ Exportações</h1>'
-    f'<div style="font-size:0.82rem;color:{C["muted"]};margin-bottom:1.1rem;">'
+    f'<div style="0.943rem;color:{C["muted"]};margin-bottom:1.1rem;">'
     f'Vinhos, espumantes, suco e uvas · kg e USD · 1970–2019</div>',
     unsafe_allow_html=True
 )
@@ -78,7 +78,7 @@ with tab1:
         orientation="h",
         marker_color=[PAIS_COLORS.get(p, C["dim"]) for p in top_dest["pais"]],
         text=[f"${v/1e3:.0f}k" for v in top_dest["usd"]],
-        textposition="outside", textfont=dict(color=C["muted"], size=10),
+        textposition="outside", textfont=dict(color=C["muted"], size=12),
     ))
     ly = get_layout(height=340, xaxis_title="USD (mil)", margin=dict(l=16,r=80,t=20,b=16))
     ly["yaxis"] = dict(**get_layout()["yaxis"], categoryorder="total ascending")
@@ -103,7 +103,7 @@ with tab2:
         hovertemplate="<b>%{x}</b><br>%{y:,.1f} ton<extra></extra>"))
     fig4.add_trace(go.Scatter(x=ee_yr.index, y=ee_yr["usd"]/1e6,
         name="Receita (USD M)", mode="lines+markers",
-        line=dict(color=C["rose"], width=2), marker=dict(size=5),
+        line=dict(color=C["rose"], width=2), marker=dict(size=6),
         yaxis="y2",
         hovertemplate="<b>%{x}</b><br>$%{y:.2f}M<extra></extra>"))
     fig4.update_layout(**get_layout(
@@ -126,7 +126,7 @@ with tab2:
             orientation="h",
             marker_color=hex_to_rgba(C["gold"], 0.75),
             text=[f"${v/1e3:.0f}k" for v in top_esp_dest["usd"]],
-            textposition="outside", textfont=dict(color=C["muted"], size=10),
+            textposition="outside", textfont=dict(color=C["muted"], size=12),
         ))
         ly2 = get_layout(height=320, xaxis_title="USD (mil)", margin=dict(l=16,r=80,t=20,b=16))
         ly2["yaxis"] = dict(**get_layout()["yaxis"], categoryorder="total ascending")

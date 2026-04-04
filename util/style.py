@@ -57,24 +57,24 @@ _CSS_LINES = [
     # KPI card
     f".kpi-card{{background:{C['surface']};border:1px solid {C['border']};border-radius:8px;padding:1rem 1.2rem;margin-bottom:0.5rem;}}",
     f".kpi-card:hover{{border-color:{C['gold']};}}",
-    ".kpi-number{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;line-height:1;margin-bottom:0.2rem;}",
-    f".kpi-label{{font-size:0.65rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:{C['dim']};}}",
-    ".kpi-delta{font-size:0.75rem;font-weight:500;margin-top:0.25rem;}",
+    ".kpi-number{font-family:'Playfair Display',serif;2.3rem;font-weight:700;line-height:1;margin-bottom:0.2rem;}",
+    f".kpi-label{{0.7475rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:{C['dim']};}}",
+    ".kpi-delta{0.8625rem;font-weight:500;margin-top:0.25rem;}",
     # Insight card
     f".insight{{border-radius:8px;padding:0.85rem 1.1rem;margin:0.6rem 0;border-left:3px solid;}}",
     f".insight-wine{{background:{hex_to_rgba(C['gold'],0.08)};border-color:{C['gold']};}}",
     f".insight-alert{{background:{hex_to_rgba(C['red'],0.08)};border-color:{C['red']};}}",
     f".insight-growth{{background:{hex_to_rgba(C['green'],0.08)};border-color:{C['green']};}}",
     f".insight-info{{background:{hex_to_rgba(C['rose'],0.08)};border-color:{C['rose']};}}",
-    ".insight p{color:#D4B8C0;font-size:0.85rem;line-height:1.65;margin:0;}",
+    ".insight p{color:#D4B8C0;0.9775rem;line-height:1.65;margin:0;}",
     f".insight strong{{color:{C['cream']};}}",
     # Section header
-    f".sec-label{{font-size:0.62rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:{C['gold']};margin-bottom:0.25rem;}}",
-    f".sec-title{{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:{C['cream']};line-height:1.15;margin-bottom:0.75rem;}}",
+    f".sec-label{{0.713rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:{C['gold']};margin-bottom:0.25rem;}}",
+    f".sec-title{{font-family:'Playfair Display',serif;1.725rem;font-weight:700;color:{C['cream']};line-height:1.15;margin-bottom:0.75rem;}}",
     # Event badge
-    f".evt-badge{{display:inline-block;font-size:0.6rem;font-weight:700;letter-spacing:0.08em;padding:0.12rem 0.5rem;border-radius:3px;}}",
+    f".evt-badge{{display:inline-block;0.69rem;font-weight:700;letter-spacing:0.08em;padding:0.12rem 0.5rem;border-radius:3px;}}",
     # Data row
-    f".data-row{{display:flex;justify-content:space-between;padding:0.4rem 0;border-bottom:1px solid {C['border']};font-size:0.8rem;}}",
+    f".data-row{{display:flex;justify-content:space-between;padding:0.4rem 0;border-bottom:1px solid {C['border']};0.92rem;}}",
     f".data-row .dk{{color:{C['muted']};}}",
     f".data-row .dv{{color:{C['cream']};font-weight:500;}}",
 ]
